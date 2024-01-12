@@ -19,6 +19,7 @@
 Allows theatre partners to add, update, or remove information about their theatres.
 
 DB Table: theatres
+
 DB Columns: `id (Primary Key), user_id, name, location, seating_capacity`
 
 APIs:
@@ -32,8 +33,11 @@ Enables theatre partners to onboard movies.
 Manages information about movies, including titles, genres, and languages.
 
 DB Table 1: movies
+
 DB Columns 1:`id (Primary Key), title, genre, language`
+
 DB Table 2: movie-theatre
+
 DB Columns 2:`id (Primary Key), movie_id, theatre_id`
 
 APIs:
@@ -47,6 +51,7 @@ APIs:
 Manages customer & partner profile.
 
 DB Table: users
+
 DB Columns:`id (Primary Key), name, password_hash, email, role`
 
 APIs:
@@ -61,6 +66,7 @@ Manages seat availability, reservation, and booking transactions.
 Sends confirmation and e-tickets to customers.
 
 DB Table: Bookings
+
 DB Columns:`id (Primary Key), user_id, movie_id, theatre_id, seats_booked`
 
 APIs:
