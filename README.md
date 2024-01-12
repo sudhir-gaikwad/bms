@@ -131,3 +131,25 @@ curl --location --request GET 'localhost:8081/ms/1.0/movies/1/theatres' \
 ```
 `
 
+# Use Cases
+
+## Completed
+1. Onboard theatres
+2. View Theatres
+3. Get theatre details
+4. Add movies
+5. Get movies
+6. Get movie details
+5. Register movie to a theatres
+6. Get theatres of a particular movie
+
+## Incomplete
+1. User management - login, logout
+2. Role management - customer and partner roles.
+3. Bookings
+4. Payment
+5. Offers
+6. Showtimes
+
+
+
