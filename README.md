@@ -8,6 +8,9 @@
 - CI: `Jenkins`
 
 ## Architecture & Deployment
+<img alt="Architecture" src="bms.png"> </img>
+
+
 - Architecture: `Microservices`
 - Cloud: `AWS`
 - Container: `AWS EKS`
@@ -74,5 +77,57 @@ APIs:
 * `/bs/1.0/bookings/{bookingID}`            : [GET] Get booking details
 * `/bs/1.0/bookings/customer/{customerID}` : [GET] Get a customer's booking history
 
+# Postman APIs
+```
+1. Get movies
+curl --location 'localhost:8081/ms/1.0/movies'
 
+2 Get movie by id
+curl --location 'localhost:8081/ms/1.0/movies/2' \
+--data ''
+
+3 Add movie
+curl --location 'localhost:8081/ms/1.0/movies' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "Gadar 1",
+    "genre": "Action",
+    "language": "Hindi"
+}'
+
+4 Get theatres
+curl --location 'localhost:8082/ts/1.0/theatres'
+
+5 Get theatre by id
+curl --location 'localhost:8082/ts/1.0/theatres/1' \
+--data ''
+
+6 Add theatre
+curl --location 'localhost:8082/ts/1.0/theatres' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Theatr1",
+    "location": "Pune",
+    "seatingCapacity": 100
+}'
+
+7 Register movie theatre
+curl --location --request GET 'localhost:8081/ms/1.0/movies/1/theatre/2' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Inox",
+    "location": "Pune",
+    "seatingCapacity": 100
+}'
+
+8 Get theatres by movie id
+curl --location --request GET 'localhost:8081/ms/1.0/movies/1/theatres' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Inox",
+    "location": "Pune",
+    "seatingCapacity": 100
+}'
+```
+`
 
